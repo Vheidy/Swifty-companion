@@ -19,24 +19,21 @@ class ProjectViewCell: UITableViewCell {
     private let markLabel: UILabel
     private var currentColor: UIColor = .white
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    init(_ name: String, _ value: Int?, _ iconType: IconType) {
         nameLabel = UILabel()
         markLabel = UILabel()
         icon = UIImageView()
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .default, reuseIdentifier: nil)
         
         setNameLabel()
         setIcon()
         setMarkLabel()
         configureBackgroundView()
-    }
-
-    func configure(_ name: String, _ value: Int?, _ iconType: IconType) {
         configureNameLabel(with: name)
         configureIcon(with: iconType)
         configureMarkLabel(with: value)
     }
-    
+
     private func setNameLabel() {
         contentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false

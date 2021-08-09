@@ -55,9 +55,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             return skillCell
         case .project(let projects):
             let project = projects[indexPath.row]
-            guard let projectCell = tableView.dequeueReusableCell(withIdentifier: "ProjectViewCell") as? ProjectViewCell else { return UITableViewCell() }
-            projectCell.configure(project.name, project.finalMark, project.icon)
-            return projectCell
+            return ProjectViewCell(project.name, project.finalMark, project.icon)
         }
     }
     
